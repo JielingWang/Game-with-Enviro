@@ -8,7 +8,7 @@ using namespace enviro;
 class GhostController : public Process, public AgentInterface {
 
     public:
-    GhostController() : Process(), AgentInterface(), vs(20) {}
+    GhostController() : Process(), AgentInterface(), vx(20) {}
 
     void init() {
         prevent_rotation();
