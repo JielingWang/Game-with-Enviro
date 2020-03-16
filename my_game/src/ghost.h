@@ -8,7 +8,7 @@ using namespace enviro;
 class GhostController : public Process, public AgentInterface {
 
     public:
-    GhostController() : Process(), AgentInterface(), vs(20) {}
+    GhostController() : Process(), AgentInterface(), vx(20) {}
 
     void init() {
         prevent_rotation();
@@ -24,14 +24,13 @@ class GhostController : public Process, public AgentInterface {
     }
     void start() {}
     void update() {
-        double fx = -30*(velocity().x-vx);
-        omni_apply_force(fx,0);
+        double fx = -30 * (velocity().x - vx);
+        omni_apply_force(fx, 0);
         if ( counter > 0 ) {
             counter--;
         }
     }
     void stop() {}
-
     double vx;
     int counter;
 
