@@ -1,6 +1,6 @@
 {
     "name": "Bumper",
-    "type": "dynamic",
+    "type": "static",
     "description": "Replace this string with a description",
     "shape": [
         { "x": -5, "y": 10 },
