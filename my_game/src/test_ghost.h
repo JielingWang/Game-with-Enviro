@@ -1,14 +1,14 @@
-#ifndef __GHOST_AGENT__H
-#define __GHOST_AGENT__H 
+#ifndef __TEST_GHOST_AGENT__H
+#define __TEST_GHOST_AGENT__H 
 
 #include "enviro.h"
 
 using namespace enviro;
 
-class GhostController : public Process, public AgentInterface {
+class TestGhostController : public Process, public AgentInterface {
 
     public:
-    GhostController() : Process(), AgentInterface(), vx(20) {}
+    TestGhostController() : Process(), AgentInterface(), vx(20) {}
 
     void init() {
         prevent_rotation();
@@ -24,9 +24,17 @@ class GhostController : public Process, public AgentInterface {
     }
     void start() {}
     void update() {
+        // vx is the desired speed, considering friction
+        // fx stands for F in Newton's Laws
         double fx = -30 * (velocity().x - vx);
-        // double fx = 15 * vx;
         omni_apply_force(fx, 0);
+        int direction = rand() % 10 == 1 ? 0 : 1;
+        if (direction == 0) {
+            vx = -vx;
+        }
+        
+        // std::cout << velocity().x << "\n";
+
         // omni_apply_force((rand() % fmax) - fmax / 2, 0);
         if ( counter > 0 ) {
             counter--;
@@ -34,21 +42,21 @@ class GhostController : public Process, public AgentInterface {
     }
     void stop() {}
 
-    const int fmax = 200.0;
+    const int fmax = 600.0;
     double vx;
     int counter;
 
 };
 
-class Ghost : public Agent {
+class TestGhost : public Agent {
     public:
-    Ghost(json spec, World& world) : Agent(spec, world) {
+    TestGhost(json spec, World& world) : Agent(spec, world) {
         add_process(c);
     }
     private:
-    GhostController c;
+    TestGhostController c;
 };
 
-DECLARE_INTERFACE(Ghost)
+DECLARE_INTERFACE(TestGhost)
 
 #endif

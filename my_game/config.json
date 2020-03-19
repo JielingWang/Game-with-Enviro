@@ -8,11 +8,38 @@
 
     "agents": [
         {
+            "definition": "defs/wall.json",
+            "style": { "fill": "gray", "stroke": "none" },
+            "position": {
+                "x": -345, 
+                "y": 0, 
+                "theta": 0
+            }
+        },
+        {
+            "definition": "defs/wall.json",
+            "style": { "fill": "gray", "stroke": "none" },
+            "position": {
+                "x": 345, 
+                "y": 0, 
+                "theta": 0
+            }
+        },
+        {
             "definition": "defs/ghost.json",
             "style": { "fill": "lightgreen", "stroke": "black" },
             "position": {
                 "x": 0, 
                 "y": 80, 
+                "theta": 0
+            }
+        },
+        {
+            "definition": "defs/random_ghost.json",
+            "style": { "fill": "lightblue", "stroke": "black" },
+            "position": {
+                "x": 0, 
+                "y": 175, 
                 "theta": 0
             }
         },
@@ -33,28 +60,28 @@
                 "y": 68, 
                 "theta": 0
             }
+        },
+        {
+            "definition": "defs/player.json",
+            "style": { "fill": "pink", "stroke": "none" },
+            "position": {
+                "x": -100, 
+                "y": 135, 
+                "theta": 0
+            }
+        },
+        {
+            "definition": "defs/virus.json",
+            "style": { "fill": "orange", "stroke": "orange", "strokeWidth": "1px", "strokeOpacity": "0" },
+            "position": {
+                "x": -400, 
+                "y": -200, 
+                "theta": 0
+            }
         }
     ],
 
     "statics": [
-        {
-            "style": { "fill": "gray", "stroke": "none" },
-            "shape": [
-                { "x": -350, "y": -200 },
-                { "x": -350,  "y": 200 },
-                { "x": -340,  "y": 200 },
-                { "x": -340, "y": -200 }
-            ]
-        },
-        {
-            "style": { "fill": "gray", "stroke": "none" },
-            "shape": [
-                { "x": 350, "y": -200 },
-                { "x": 350,  "y": 200 },
-                { "x": 340,  "y": 200 },
-                { "x": 340, "y": -200 }
-            ]
-        },
         {
             "style": { "fill": "gray", "stroke": "none" },
             "shape": [
@@ -71,6 +98,37 @@
                 { "x": 350,  "y": -200 },
                 { "x": 350,  "y": -190 },
                 { "x": -350, "y": -190 }
+            ]
+        },
+
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": -350, "y": 125 },
+                { "x": -250, "y": 125 },
+                { "x": -250, "y": 115 },
+                { "x": -350, "y": 115 }
+            ]
+        },
+
+        
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": -150, "y": 90 },
+                { "x": 150, "y": 90 },
+                { "x": 150, "y": 80 },
+                { "x": -150, "y": 80 }
+            ]
+        },
+
+        {
+            "style": { "fill": "gray", "stroke": "none" },
+            "shape": [
+                { "x": 350, "y": 55 },
+                { "x": 250, "y": 55 },
+                { "x": 250, "y": 45 },
+                { "x": 350, "y": 45 }
             ]
         }
 
