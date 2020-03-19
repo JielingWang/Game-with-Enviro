@@ -22,6 +22,8 @@ In this game, you have to try your best to grab the star (which will change its 
 - Blue ghost: Blue ghost will change its direction randomly and emit virus, if you are attacked by the virus, your speed will be reduced to 1/10. This affect will sustain for a while, and during this period if you are attacked again, the duration will become longer.
 - Green ghost: Green ghost change its direction only when it collides with the bumpers, and it woll not emit anything. But if you collide with it by accident, you will back to the start location immediately.
 
+Notice: when you touch the star, you win, but unfortunately there is no affect to show you win, so you can try your best to touch the star again and again. :P
+
 Key Challenges
 ---
 
