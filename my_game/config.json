@@ -63,16 +63,27 @@
         },
         {
             "definition": "defs/player.json",
-            "style": { "fill": "pink", "stroke": "none" },
+            "style": { "fill": "#4b2e83", "stroke": "none" },
             "position": {
                 "x": -100, 
                 "y": 135, 
                 "theta": 0
             }
         },
+
+        {
+            "definition": "defs/star.json",
+            "style": { "fill": "#b7a57a", "stroke": "none" },
+            "position": {
+                "x": 300, 
+                "y": 30, 
+                "theta": 0
+            }
+        },
+        
         {
             "definition": "defs/virus.json",
-            "style": { "fill": "orange", "stroke": "orange", "strokeWidth": "1px", "strokeOpacity": "0" },
+            "style": { "fill": "lightblue", "stroke": "blue", "strokeWidth": "1px", "strokeOpacity": "0" },
             "position": {
                 "x": -400, 
                 "y": -200, 

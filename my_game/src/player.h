@@ -51,6 +51,12 @@ class PlayerController : public Process, public AgentInterface {
             counter = 0;
             ATTACKED = true;
         });
+        notice_collisions_with("Ghost", [&](Event &e) {
+            teleport(0, 135, 0);
+        });
+        decorate(R"(<g>
+            <circle cx=-5 cy=-3 r=2 style='fill:black'></circle>
+            <circle cx=5 cy=-3 r=2 style='fill:black'></circle></g>)");
     }
     void start() {}
     void update() {
@@ -95,7 +101,7 @@ class PlayerController : public Process, public AgentInterface {
     const double H_MIN = 1.0;
 
     const json ORIGINAL_HOST_STYLE = { 
-                    {"fill", "pink"}, 
+                    {"fill", "#4b2e83"}, 
                     {"stroke", "black"}, 
                     {"strokeWidth", "10px"},
                     {"strokeOpacity", "0"}

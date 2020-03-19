@@ -23,28 +23,18 @@ class VirusController : public Process, public AgentInterface {
         notice_collisions_with("Wall", [&](Event &e) {
             remove_agent(id());
         });
+        notice_collisions_with("Star", [&](Event &e) {
+            remove_agent(id());
+        });
     }
     void start() {}
-    void update() {
-        // omni_apply_force(100, 0);
-        // if ( player_id >= 0 && counter++ == 50 ) {
-        //     remove_agent(id());
-        //     Agent &host = find_agent(player_id);
-        //     host.set_style(ORIGINAL_HOST_STYLE);
-        // }
-    }
+    void update() {}
     void stop() {}
 
     int player_id;
     int counter;
     const json ATTACKED_HOST_STYLE = { 
-                    {"fill", "orange"}, 
-                    {"stroke", "black"}, 
-                    {"strokeWidth", "10px"},
-                    {"strokeOpacity", "0"}
-                };
-    const json ORIGINAL_HOST_STYLE = { 
-                    {"fill", "pink"}, 
+                    {"fill", "lightblue"}, 
                     {"stroke", "black"}, 
                     {"strokeWidth", "10px"},
                     {"strokeOpacity", "0"}

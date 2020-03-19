@@ -18,6 +18,12 @@ class GhostController : public Process, public AgentInterface {
               counter = 10;
             }
         });
+        notice_collisions_with("Star", [&](Event &e) {
+            if ( counter == 0 ) {
+              vx = -vx;
+              counter = 10;
+            }
+        });
         decorate(R"(<g>
             <circle cx=-5 cy=-3 r=2 style='fill:black'></circle>
             <circle cx=5 cy=-3 r=2 style='fill:black'></circle></g>)");
@@ -25,9 +31,7 @@ class GhostController : public Process, public AgentInterface {
     void start() {}
     void update() {
         double fx = -30 * (velocity().x - vx);
-        // double fx = 15 * vx;
         omni_apply_force(fx, 0);
-        // omni_apply_force((rand() % fmax) - fmax / 2, 0);
         if ( counter > 0 ) {
             counter--;
         }

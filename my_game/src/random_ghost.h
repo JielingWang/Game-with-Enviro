@@ -15,6 +15,9 @@ class RandomGhostController : public Process, public AgentInterface {
         notice_collisions_with("Wall", [&](Event &e) {
             GHOST_SPEED = -GHOST_SPEED;
         });
+        notice_collisions_with("Star", [&](Event &e) {
+            GHOST_SPEED = -GHOST_SPEED;
+        });
         decorate(R"(<g>
             <circle cx=-5 cy=-3 r=2 style='fill:black'></circle>
             <circle cx=5 cy=-3 r=2 style='fill:black'></circle></g>)");
@@ -24,7 +27,7 @@ class RandomGhostController : public Process, public AgentInterface {
         double fx = -30 * (velocity().x - GHOST_SPEED);
         omni_apply_force(fx, 0);
         int direction = rand() % 30 == 1 ? 1 : 0;
-        int attack = rand() % 60 == 1 ? 1 : 0;
+        int attack = rand() % 40 == 1 ? 1 : 0;
         if (direction == 1) {
             GHOST_SPEED = -GHOST_SPEED;
         }
@@ -43,7 +46,7 @@ class RandomGhostController : public Process, public AgentInterface {
     double GHOST_SPEED;
     double VIRUS_SPEED;
     const json VIRUS_STYLE = { 
-                   {"fill", "orange"}, 
+                   {"fill", "lightblue"}, 
                    {"stroke", "black"}, 
                    {"strokeWidth", "10px"},
                    {"strokeOpacity", "0"}
