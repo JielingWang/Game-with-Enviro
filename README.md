@@ -28,7 +28,7 @@ Key Challenges
 The key challenges I met during the development are mainly as follows:
 - Understood the motion control methods like `omni_apply_force(double fx, double fy)` and `apply_force(double thrust, double torque)`. Firstly I checked the source code but unfortunately I didn't figure out how it works, so I generated a robot called test_ghost as a contrast to see how the parameter will affect the robot.
 - One interesting problem I met during the development process was that when the blue ghost emits virus, I wanted the emit direction to be consistent with the blue ghost direction. I tried a lot of methods but none of them worked. Finally I realized that the friction may be the point, so I changed the friction of virus to be negative, and fortunately it worked.
-- I tried many other ways to make the game more interesting and more user-friendly, like I tried to attach virus onto the player when it was attacked, and the current version is the most stable one right now. I will keep developing this game :D.
+- I tried many other ways to make the game more interesting and more user-friendly, like I tried to attach virus onto the player when it was attacked, and the current version is the most stable one right now. I will keep developing this game.
 
 Set-up
 ===
@@ -52,3 +52,8 @@ enviro
 Then navigate to `http://localhost` you could begin to play this game. 
 
 You can press `Ctrl-C` to stop the enviro server.
+
+Acknowedges
+===
+
+Some codes are from examples provided by Prof. Klavins, see [here](https://github.com/klavinslab/enviro/tree/master/examples) for more details.
