@@ -33,17 +33,20 @@ The key challenges I met during the development are mainly as follows:
 Set-up
 ===
 
-Dockerhub Images
----
-
-To start a Docker container with ENVIRO pre-loaded into it, do:
+Start a Docker container with ENVIRO pre-loaded into it:
 
 ```bash
 docker run -p80:80 -p8765:8765 -v $PWD:/source -it klavins/enviro:v1.6 bash
 esm start
 ```
 
-Make the project and start the enviro sever as follows.
+Then get the code, and go into `my_game` folder:
+```
+git clone https://github.com/JielingWang/Game-with-Enviro.git
+cd my_game
+```
+
+Make the project and start the enviro sever:
 ```bash
 make
 enviro
